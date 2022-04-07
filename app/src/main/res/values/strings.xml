@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Quarter_3_PopularLibraries</string>
+    <string name="forgot_password"><u>Forgot password?</u></string>
+    <string name="join_now"><u>Join now</u></string>
+    <string name="sign_in">Sign in</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+</resources>
