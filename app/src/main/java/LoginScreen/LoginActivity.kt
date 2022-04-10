@@ -21,17 +21,17 @@ class LoginActivity : AppCompatActivity(), LoginScreen.View {
         presenter = restorePresenter()
         presenter?.onAttach(this)
 
-        vb.buttonSignIn.setOnClickListener {
+        vb.signInButton.setOnClickListener {
             presenter?.onLogin(
-                vb.editTextTextLogin.text.toString(),
-                vb.editTextTextPassword.text.toString()
+                vb.loginEditText.text.toString(),
+                vb.passwordEditText.text.toString()
             )
         }
 
-        vb.textViewForgotPassword.setOnClickListener {
+        vb.forgotPasswordTextView.setOnClickListener {
             workInProgress()
         }
-        vb.textViewJoinNow.setOnClickListener {
+        vb.joinNowTextView.setOnClickListener {
             workInProgress()
         }
 
@@ -56,11 +56,11 @@ class LoginActivity : AppCompatActivity(), LoginScreen.View {
     }
 
     override fun showProgress() {
-        vb.buttonSignIn.isEnabled = false
+        vb.signInButton.isEnabled = false
     }
 
     override fun hideProgress() {
-        vb.buttonSignIn.isEnabled = true
+        vb.signInButton.isEnabled = true
     }
 
     override fun workInProgress() {
