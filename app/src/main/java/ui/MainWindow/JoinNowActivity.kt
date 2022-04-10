@@ -1,12 +1,12 @@
-package MainWindow
+package ui.MainWindow
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.quarter_3_popularlibraries.R
 
-class ForgotPassword_Activity : AppCompatActivity() {
+class JoinNowActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_forgot_password)
+        setContentView(R.layout.activity_join_now)
     }
 }

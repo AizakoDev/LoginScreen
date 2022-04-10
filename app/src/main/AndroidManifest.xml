@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Quarter_3_PopularLibraries">
         <activity
-            android:name="MainWindow.MainWindow"
+            android:name="ui.MainWindow.MainWindowActivity"
             android:exported="false" />
         <activity
-            android:name="LoginScreen.LoginActivity"
+            android:name="ui.LoginScreen.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

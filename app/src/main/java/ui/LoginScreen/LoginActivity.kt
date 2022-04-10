@@ -1,6 +1,6 @@
-package LoginScreen
+package ui.LoginScreen
 
-import MainWindow.MainWindow
+import ui.MainWindow.MainWindowActivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,7 +8,7 @@ import android.widget.Toast
 import com.example.quarter_3_popularlibraries.databinding.ActivityLoginBinding
 
 
-class LoginActivity : AppCompatActivity(), LoginScreen.View {
+class LoginActivity : AppCompatActivity(), ui.LoginScreen.View {
 
     private lateinit var vb: ActivityLoginBinding
     private var presenter: Presenter? = null
@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity(), LoginScreen.View {
     }
 
     override fun setSuccess() {
-        val intent = Intent(this, MainWindow::class.java)
+        val intent = Intent(this, MainWindowActivity::class.java)
         startActivity(intent)
     }
 

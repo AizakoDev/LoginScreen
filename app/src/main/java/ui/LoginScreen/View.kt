@@ -1,4 +1,4 @@
-package LoginScreen
+package ui.LoginScreen
 
 interface View {
     fun setSuccess()

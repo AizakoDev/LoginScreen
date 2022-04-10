@@ -1,4 +1,4 @@
-package LoginScreen
+package ui.LoginScreen
 
 import android.os.Handler
 import android.os.Looper
