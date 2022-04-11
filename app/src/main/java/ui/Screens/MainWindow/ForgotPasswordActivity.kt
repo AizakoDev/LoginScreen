@@ -1,4 +1,4 @@
-package ui.MainWindow
+package ui.Screens.MainWindow
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -1,14 +1,17 @@
-package ui.LoginScreen
+package ui.Screens.LoginScreen
 
-import ui.MainWindow.MainWindowActivity
+import ui.Screens.MainWindow.MainWindowActivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.quarter_3_popularlibraries.databinding.ActivityLoginBinding
+import main.app
+import ui.ViewPresenter.Presenter
+import ui.ViewPresenter.View
 
 
-class LoginActivity : AppCompatActivity(), ui.LoginScreen.View {
+class LoginActivity : AppCompatActivity(), View {
 
     private lateinit var vb: ActivityLoginBinding
     private var presenter: Presenter? = null
@@ -39,7 +42,7 @@ class LoginActivity : AppCompatActivity(), ui.LoginScreen.View {
 
     private fun restorePresenter(): LoginPresenter {
         val presenter = lastCustomNonConfigurationInstance as? LoginPresenter
-        return presenter ?: LoginPresenter()
+        return presenter ?: LoginPresenter(app.loginUsecase)
     }
 
     override fun onRetainCustomNonConfigurationInstance(): Any? {
