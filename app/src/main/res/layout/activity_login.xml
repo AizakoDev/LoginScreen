@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="LoginScreen.LoginActivity">
+    tools:context="ui.Screens.LoginScreen.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/editTextTextLogin"
+            android:id="@+id/login_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -24,7 +24,7 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/password_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -37,7 +37,7 @@
         </Space>
 
         <Button
-            android:id="@+id/button_signIn"
+            android:id="@+id/signIn_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/sign_in" />
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/textView_forgotPassword"
+                android:id="@+id/forgotPassword_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
@@ -61,7 +61,7 @@
                 android:textColor="@color/text_click" />
 
             <TextView
-                android:id="@+id/textView_joinNow"
+                android:id="@+id/joinNow_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"

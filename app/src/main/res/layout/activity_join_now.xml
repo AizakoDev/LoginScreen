@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="MainWindow.JoinNowActivity">
+    tools:context="ui.Screens.Registration.JoinNowActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

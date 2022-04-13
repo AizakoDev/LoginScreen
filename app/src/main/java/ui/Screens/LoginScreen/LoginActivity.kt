@@ -1,14 +1,17 @@
-package LoginScreen
+package ui.Screens.LoginScreen
 
-import MainWindow.MainWindow
+import ui.Screens.MainWindow.MainWindowActivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.quarter_3_popularlibraries.databinding.ActivityLoginBinding
+import main.app
+import ui.ViewPresenter.Presenter
+import ui.ViewPresenter.View
 
 
-class LoginActivity : AppCompatActivity(), LoginScreen.View {
+class LoginActivity : AppCompatActivity(), View {
 
     private lateinit var vb: ActivityLoginBinding
     private var presenter: Presenter? = null
@@ -21,17 +24,17 @@ class LoginActivity : AppCompatActivity(), LoginScreen.View {
         presenter = restorePresenter()
         presenter?.onAttach(this)
 
-        vb.buttonSignIn.setOnClickListener {
+        vb.signInButton.setOnClickListener {
             presenter?.onLogin(
-                vb.editTextTextLogin.text.toString(),
-                vb.editTextTextPassword.text.toString()
+                vb.loginEditText.text.toString(),
+                vb.passwordEditText.text.toString()
             )
         }
 
-        vb.textViewForgotPassword.setOnClickListener {
+        vb.forgotPasswordTextView.setOnClickListener {
             workInProgress()
         }
-        vb.textViewJoinNow.setOnClickListener {
+        vb.joinNowTextView.setOnClickListener {
             workInProgress()
         }
 
@@ -39,7 +42,7 @@ class LoginActivity : AppCompatActivity(), LoginScreen.View {
 
     private fun restorePresenter(): LoginPresenter {
         val presenter = lastCustomNonConfigurationInstance as? LoginPresenter
-        return presenter ?: LoginPresenter()
+        return presenter ?: LoginPresenter(app.loginUsecase)
     }
 
     override fun onRetainCustomNonConfigurationInstance(): Any? {
@@ -47,7 +50,7 @@ class LoginActivity : AppCompatActivity(), LoginScreen.View {
     }
 
     override fun setSuccess() {
-        val intent = Intent(this, MainWindow::class.java)
+        val intent = Intent(this, MainWindowActivity::class.java)
         startActivity(intent)
     }
 
@@ -56,11 +59,11 @@ class LoginActivity : AppCompatActivity(), LoginScreen.View {
     }
 
     override fun showProgress() {
-        vb.buttonSignIn.isEnabled = false
+        vb.signInButton.isEnabled = false
     }
 
     override fun hideProgress() {
-        vb.buttonSignIn.isEnabled = true
+        vb.signInButton.isEnabled = true
     }
 
     override fun workInProgress() {

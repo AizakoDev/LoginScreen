@@ -1,4 +1,4 @@
-package LoginScreen
+package ui.ViewPresenter
 
 interface Presenter {
     fun onAttach(view: View)
